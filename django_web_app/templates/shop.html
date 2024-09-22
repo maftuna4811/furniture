@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Shop</h1>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		
+
+		<div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+		      	<div class="row">
+
+
+					{% for i in products %}
+					<div class="card" style="width: 18rem;">
+					  <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+					  <div class="card-body">
+						<h5 class="card-title">{{ i.name }}</h5>
+						<p class="card-text">{{ i.description }}</p>
+						<a href="{% url 'product_detail' i.id %}" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+
+
+
+{% endblock %}
